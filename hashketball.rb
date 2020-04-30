@@ -127,4 +127,8 @@ def game_hash
 end
 
 # Write code here
+
+def num_points_scored
+
 game_hash[:away][:players][0][:points] = 18
+end
