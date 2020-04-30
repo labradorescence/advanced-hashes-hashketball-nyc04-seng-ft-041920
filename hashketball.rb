@@ -128,7 +128,10 @@ end
 
 # Write code here
 
-def num_points_scored (arg)
+def num_points_scored (player_name)
 
-game_hash[:away][:players][0][:points] = arg
+game_hash.each do |element|
+
+
+
 end
