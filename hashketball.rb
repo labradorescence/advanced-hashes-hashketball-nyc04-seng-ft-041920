@@ -128,7 +128,7 @@ end
 
 # Write code here
 
-def num_points_scored
+def num_points_scored (arg)
 
-game_hash[:away][:players][0][:points] = 18
+game_hash[:away][:players][0][:points] = arg
 end
