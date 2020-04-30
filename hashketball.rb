@@ -130,8 +130,21 @@ end
 
 def num_points_scored (player_name)
 
-game_hash.each do |element|
-
-
+  #game_hash[:away][:players][0][:points]
+  #puts "before #{game_hash[:away][:players][0][:points]}"
+  =begin
+  game_hash[:away][:players][0][:points] = 18
+  
+  puts "after #{game_hash[:away][:players][0][:points]}"
+  
+  game_hash[:away][:players][0][:points]
+  =end
+  
+  
+  game_hash[:home][:players].each do |i|
+    puts "#{i}"
+  end
+  
+  game_hash[:home][:players][i][:player_name]
 
 end
