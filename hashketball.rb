@@ -1,3 +1,4 @@
+require 'pry'
 # Write your code below game_hash
 def game_hash
   {
@@ -127,3 +128,99 @@ def game_hash
 end
 
 # Write code here
+
+# using while to get the player name
+# 
+def num_points_scored(player_name)
+  game_hash.each do |home_away, hash_val|
+    players_arr = hash_val[:players]
+    #####  HoHoAoH 
+    #players_arr.length.times do |index| #why this doesn't work? index is 0. it should be 0,1,2,3,4? 
+      index = 0
+      while index < players_arr.length do
+        if players_arr[index][:player_name] == player_name
+          return players_arr[index][:points]
+        end
+        index += 1
+        #binding.pry
+      end
+    end
+end
+
+def shoe_size(player_name)
+  game_hash.each do |home_away, hash_val|
+    players_arr = hash_val[:players]
+     #####  
+    
+      players_arr.count do |element| #why this doesn't work? index is 0. it should be 0,1,2,3,4?  
+         if element[:player_name] == player_name
+          return element[:shoe]
+    
+          end
+        end
+    end
+  end
+
+
+  def team_colors(team_name)
+    game_hash.each do |home_away, values|
+      if values[:team_name] == team_name
+        return values[:colors]
+      end
+    end
+  end
+
+  def team_names
+    team_names_arr = []
+    game_hash.each do |home_away, values|
+      team_names_arr << values[:team_name]
+      end
+   return team_names_arr
+end
+
+def player_numbers(team_name)
+  jersey_nums = []
+  game_hash.each do |home_away, values|
+  
+    if values[:team_name] == team_name
+        values[:players].each do |ele|
+        jersey_nums << ele[:number]
+    
+        #binding.pry
+        end
+    end
+  end
+  jersey_nums
+end
+
+def player_stats(player_name)
+  
+  game_hash.each do |home_away, val|
+    
+    val[:players].each do |each_player|
+      
+      if each_player[:player_name] == player_name
+       return each_player
+      end
+    end
+  end
+end
+
+def big_shoe_rebounds
+
+  largest_rebound = 0
+  largest = 0
+  game_hash.each do |home_away, hash_val|
+    players_arr = hash_val[:players]
+      players_arr.count do |element| 
+            if element[:shoe] > largest
+              largest = element[:shoe]
+              largest_rebound = element[:rebounds]
+              
+            end
+       end
+  end
+  return largest_rebound
+#  binding.pry
+end
+
